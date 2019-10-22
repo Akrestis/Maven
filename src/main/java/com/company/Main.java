@@ -1,26 +1,49 @@
 package com.company;
 
-import com.google.gson.Gson;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.Reader;
+import com.company.Dao.UserDao;
+import com.company.model.User;
 
 public class Main {
 
-    //1) Создать проект Maven. В корень проекта положить текстовый файл.
-    //Распарсить этот JSON и вывести объекты через println().
-
     public static void main(String[] args) {
+        UserDao userDao = new UserDao();
 
-        Gson gson = new Gson();
+        userDao.removeAll();
 
-        try {
-            Reader reader = new FileReader("data.txt");
-            Group group = gson.fromJson(reader,Group.class);
-            System.out.println(group);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        System.out.println("=============================================================");
+
+        userDao.addUser(new User("Alex", 11));
+        userDao.addUser(new User("Ben", 22));
+        userDao.addUser(new User("Carl", 33));
+        userDao.addUser(new User("Den", 44));
+
+
+        System.out.println("Users: " + userDao.getAllUsers());
+
+        System.out.println("=============================================================");
+
+        User user = userDao.getUser(3);
+        System.out.println("User by id: " + user);
+
+        user = userDao.getUserByName("Alex");
+        System.out.println("User by name: " + user);
+
+        user.setAge(55);
+        userDao.updateUser(user);
+
+        user = userDao.getUserByName("Alex");
+        System.out.println("Updated user: " + user);
+
+        System.out.println("=============================================================");
+
+        userDao.removeUser(2);
+        System.out.println("Users: " + userDao.getAllUsers());
+
+        userDao.removeUserByName("Ben");
+        System.out.println("Users: " + userDao.getAllUsers());
+
+        System.out.println("=============================================================");
+
+        userDao.close();
     }
 }
