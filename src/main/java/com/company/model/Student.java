@@ -3,8 +3,8 @@ package com.company.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "STUDENTS")
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,17 +14,23 @@ public class User {
     private String name;
     @Column(name = "age")
     private int age;
+    @Column(name = "group_id")
+    private int groupId;
 
-    public User() {
+    public Student() {
     }
 
-    public User(String name, int age) {
+    public Student(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
     public int getId() {
         return id;
+    }
+
+    public int getGroupId() {
+        return groupId;
     }
 
     public String getName() {
@@ -39,6 +45,10 @@ public class User {
         this.id = id;
     }
 
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -49,10 +59,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User {" +
-                "id: " + id +
-                ", name: '" + name + '\'' +
-                ", age: " + age +
-                '}';
+        return name + ", age: " + age;
     }
 }
