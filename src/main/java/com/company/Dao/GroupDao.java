@@ -50,7 +50,7 @@ public class GroupDao {
         }
     }
 
-    public List<Student> getStudentByName(String groupName) {
+    public List<Student> getStudentsInGroup(String groupName) {
         try (Session session = sessionFactory.openSession()) {
             return session.createQuery("FROM Student WHERE group_id = :group_id ", Student.class)
                     .setParameter("group_id", getGroupId(groupName))

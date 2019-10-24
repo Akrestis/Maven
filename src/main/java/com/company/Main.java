@@ -66,10 +66,10 @@ public class Main {
         groupDao.addStudentToGroup(student9, group5);
         groupDao.addStudentToGroup(student10, group5);
 
-        System.out.println("Students in this group: " + groupDao.getStudentByName("Java"));
-        System.out.println("Students in this group: " + groupDao.getStudentByName("JS"));
-        System.out.println("Students in this group: " + groupDao.getStudentByName("PHP"));
-        System.out.println("Students in this group: " + groupDao.getStudentByName("C#"));
-        System.out.println("Students in this group: " + groupDao.getStudentByName("C++"));
+        System.out.println("Students in this group: " + groupDao.getStudentsInGroup("Java"));
+        System.out.println("Students in this group: " + groupDao.getStudentsInGroup("JS"));
+        System.out.println("Students in this group: " + groupDao.getStudentsInGroup("PHP"));
+        System.out.println("Students in this group: " + groupDao.getStudentsInGroup("C#"));
+        System.out.println("Students in this group: " + groupDao.getStudentsInGroup("C++"));
     }
 }
