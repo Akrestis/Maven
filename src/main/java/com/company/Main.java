@@ -29,16 +29,16 @@ public class Main {
         groupDao.addGroup(group4);
         groupDao.addGroup(group5);
 
-        Student student1 = new Student("Alex", 24);
-        Student student2 = new Student("Ben", 24);
-        Student student3 = new Student("Carl", 24);
+        Student student1 = new Student("Alex", 21);
+        Student student2 = new Student("Ben", 22);
+        Student student3 = new Student("Carl", 23);
         Student student4 = new Student("Dave", 24);
-        Student student5 = new Student("Emily", 24);
-        Student student6 = new Student("Felix", 24);
-        Student student7 = new Student("Greg", 24);
-        Student student8 = new Student("Helen", 24);
-        Student student9 = new Student("Isabella", 24);
-        Student student10 = new Student("Joe", 24);
+        Student student5 = new Student("Emily", 25;
+        Student student6 = new Student("Felix", 26);
+        Student student7 = new Student("Greg", 27);
+        Student student8 = new Student("Helen", 28);
+        Student student9 = new Student("Isabella", 29);
+        Student student10 = new Student("Joe", 30);
 
         studentDao.addStudent(student1);
         studentDao.addStudent(student2);
